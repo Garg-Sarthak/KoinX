@@ -24,8 +24,11 @@ const fetchData = async(vs_currency) => {
                 last_updated : coin.last_updated
             })
         }
+
+    
     }catch(e){
         console.log(e);
     }
 }
-module.exports = fetchData;
+
+module.exports = {fetchData};
