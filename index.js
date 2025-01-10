@@ -8,7 +8,7 @@ mongoose.connect(process.env.MONGO_URL);
 
 setInterval( async () => {
    await fetchData("usd")
-},1000*30);
+},1000*60*60*2);
 
 const app = express();
 app.use(cors());
