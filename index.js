@@ -5,7 +5,7 @@ const topRouter = require('./routes/index');
 
 setInterval(() => {
     fetchData("usd")
-},1000*60*60*2);
+},1000*10);
 
 const app = express();
 app.use(cors());
