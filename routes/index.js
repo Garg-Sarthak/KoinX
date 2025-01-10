@@ -1,11 +1,12 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const dotenv = require('dotenv').config();
 const Coin = require('../db.js');
+const dotenv = require('dotenv').config();
 
 const topRouter = express.Router();
 
-mongoose.connect(process.env.MONGO_URL);
+const mongoUrl = process.env.MONGO_URL
+mongoose.connect(mongoUrl);
 
 topRouter.get("/stats", async (req, res) => {
     const coin_id = req.query.coin;
