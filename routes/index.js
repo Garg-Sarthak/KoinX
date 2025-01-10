@@ -1,12 +1,7 @@
 const express = require('express');
-const mongoose = require('mongoose');
 const Coin = require('../db.js');
-const dotenv = require('dotenv').config();
-
 const topRouter = express.Router();
 
-const mongoUrl = process.env.MONGO_URL
-mongoose.connect(mongoUrl);
 
 topRouter.get("/stats", async (req, res) => {
     const coin_id = req.query.coin;
@@ -64,5 +59,6 @@ topRouter.get("/deviation", async (req, res) => {
         res.status(500).json({error : e.message});
     }
 })
+
 
 module.exports = topRouter;
